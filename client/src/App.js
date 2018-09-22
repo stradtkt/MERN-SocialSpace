@@ -11,6 +11,7 @@ import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import Dashboard from './components/dashboard/Dashboard';
+import CreateProfile from './components/create-profile/CreateProfile';
 
 import './App.css';
 import { clearCurrentProfile } from './actions/profileActions';
@@ -44,6 +45,7 @@ class App extends Component {
           <Route exact path="/login" component={Login}/>
           <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+          <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
           </Switch>
         </div>
         <Footer/>
