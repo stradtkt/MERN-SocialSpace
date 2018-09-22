@@ -16,6 +16,7 @@ import CreateProfile from './components/create-profile/CreateProfile';
 import './App.css';
 import { clearCurrentProfile } from './actions/profileActions';
 import PrivateRoute from './components/common/PrivateRoute';
+import EditProfile from './components/edit-profile/EditProfile';
 
 //Checking to make sure the person is logged in on every page request
 //Check for token
@@ -46,6 +47,9 @@ class App extends Component {
           <Switch>
           <PrivateRoute exact path="/dashboard" component={Dashboard}/>
           <PrivateRoute exact path="/create-profile" component={CreateProfile}/>
+          </Switch>
+          <Switch>
+          <PrivateRoute exact path="/edit-profile" component={EditProfile}/>
           </Switch>
         </div>
         <Footer/>
