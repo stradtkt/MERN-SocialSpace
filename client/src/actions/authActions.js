@@ -26,6 +26,14 @@ export const loginuser = userData => dispatch => {
             payload: err.response.data
         }));
 }
+
+export const logoutuser = () => dispatch => {
+    //Clearing the token set to the user
+    localStorage.removeItem('jwtToken');
+    setAuthToken(false);
+    dispatch(setCurrentUser({}));
+}
+
 export const setCurrentUser = (decoded) => {
     return {
         type: SET_CURRENT_USER,
